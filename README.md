@@ -1,1 +1,1 @@
-# ui_ResizeBar
+# ui_ElementResizer

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko" >
 <head>
-	<title>ResizeBar</title>
+	<title>ElementResizer</title>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Script-Type" content="text/javascript">
 	<meta http-equiv="Content-Style-Type" content="text/css">
@@ -27,12 +27,12 @@
 	
 	<!-- meta og -->
 	
-	<meta property="og:title" content="ResizeBar">
-	<meta property="og:description" content="ResizeBar">
+	<meta property="og:title" content="ElementResizer">
+	<meta property="og:description" content="ElementResizer">
 	<meta name="og:image" content="http://www.mins01.com/img/logo.gif">
 	<meta property="og:image:width" content="190">
 	<meta property="og:image:height" content="70" />
-	<meta property="og:site_name" content="ResizeBar" />
+	<meta property="og:site_name" content="ElementResizer" />
 	<meta property="og:type" content="website">
 	
 	<!-- //meta og -->
@@ -42,15 +42,14 @@
 	<script>
 		let er,er2,er3;
 		window.addEventListener('load',(event)=>{
-			// elementResizer = new ResizeBar(document.querySelector('#er-container'));
+			// elementResizer = new ElementResizer(document.querySelector('#er-container'));
 			er = new ElementResizer();
 			er.debug = true;
 			er.setContainer(document.querySelector('#er-container'));
-			er.addEvents();
+			er.on();
 			er2 = new ElementResizer(document.querySelector('#er-container-2'));
-			er2.addEvents();
-			er3 = new ElementResizer(document.querySelector('#er-container-3'));
-			er3.addEvents();
+			er2.debug = true;
+			er2.on();
 		})
 	</script>
 </head>
@@ -59,6 +58,8 @@
 		<h1>ElementResizer</h1>
 		<hr>
 		<div>
+			<a class="btn btn-link" href="https://github.com/mins01/ui_ElementResizer">https://github.com/mins01/ui_ElementResizer</a>
+			<a class="btn btn-link" href="https://mins01.github.io/ui_ElementResizer/">https://mins01.github.io/ui_ElementResizer/</a>
 			<a class="btn btn-link" href="index.html">index.html</a>
 			<a class="btn btn-link" href="autoApplyAll.html">autoApplyAll.html</a>
 		</div>
@@ -66,8 +67,9 @@
 	<hr>
 	<div class="container">
 		<div class="er-container" id="er-container">
-			<div id="target" class="er-target" style=" height:300px; width:200px; background-color: #ccc;">
-				111
+			<div class="er-target" style=" height:300px; width:200px; background-color: #ccc;">
+				<button type="button" class="btn btn-info btn-sm m-1" onclick="er.on()">on</button>
+				<button type="button" class="btn btn-info btn-sm m-1" onclick="er.off()">off</button>
 			</div>
 			<div class="er-bar " data-er-dir="w"></div>
 			<div class="er-bar " data-er-dir="h"></div>
@@ -75,8 +77,10 @@
 		</div>
 		<hr>
 		<div class="er-container" id="er-container-2">
-			<div id="target" class="er-target" style=" height:300px; width:200px; background-color: #ccc;">
+			<div class="er-target" style=" height:300px; width:200px; background-color: #ccc;">
 				222222
+				<button type="button" class="btn btn-info btn-sm m-1" onclick="er2.on()">on</button>
+				<button type="button" class="btn btn-info btn-sm m-1" onclick="er2.off()">off</button>
 			</div>
 			<!-- <div class="er-bar " data-er-dir="w"></div> -->
 			<!-- <div class="er-bar " data-er-dir="h"></div> -->

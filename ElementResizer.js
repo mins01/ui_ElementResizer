@@ -9,7 +9,7 @@ const ElementResizer = (function(){
 			let rs = []
 			d.querySelectorAll('.er-container').forEach((container) => {
 				let er = new ElementResizer(container);
-				er.addEvents();
+				er.on();
 				rs.push(er);
 			});
 			return rs;
@@ -45,13 +45,17 @@ const ElementResizer = (function(){
 			}
 		}
 		setContainer(container){
+			if(this.container){
+				delete this.container.__er
+			}
 			this.container = container;
+			this.container.__er = this;
 			this.target = container.querySelector('.er-target');
 			if(!this.target){
 				if(this.debug) console.warn(".er-target이 없습니다."); return false;
 			}
 		}
-		addEvents(){
+		on(){
 			if(!this.target){
 				if(this.debug) console.warn(".er-target이 없습니다."); return false;
 			}
@@ -67,7 +71,7 @@ const ElementResizer = (function(){
 			this.container.ownerDocument.addEventListener('pointerup',this.cb_onpointerup)
 			return true;
 		}
-		removeEvents(){
+		off(){
 			this.container.removeEventListener('pointerdown',this.cb_onpointerdown)
 			this.container.removeEventListener('touchstart',this.cb_ontouchstart)
 			this.container.ownerDocument.removeEventListener('pointermove',this.cb_onpointermove)
