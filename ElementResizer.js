@@ -66,7 +66,8 @@ const ElementResizer = (function(){
 			}
 
 			this.container.addEventListener('pointerdown',this.cb_onpointerdown)
-			this.container.addEventListener('touchstart',this.cb_ontouchstart)
+			this.container.addEventListener('touchstart',this.cb_ontouchstart,{passive: false})
+			this.container.ownerDocument.defaultView.addEventListener('touchmove',this.cb_ontouchstart,{passive: false})
 			this.container.ownerDocument.addEventListener('pointermove',this.cb_onpointermove)
 			this.container.ownerDocument.addEventListener('pointerup',this.cb_onpointerup)
 			return true;
@@ -74,6 +75,7 @@ const ElementResizer = (function(){
 		off(){
 			this.container.removeEventListener('pointerdown',this.cb_onpointerdown)
 			this.container.removeEventListener('touchstart',this.cb_ontouchstart)
+			this.container.ownerDocument.defaultView.removeEventListener('touchmove',this.cb_ontouchstart)
 			this.container.ownerDocument.removeEventListener('pointermove',this.cb_onpointermove)
 			this.container.ownerDocument.removeEventListener('pointerup',this.cb_onpointerup)
 			delete this.container.dataset.erOn;
@@ -124,11 +126,15 @@ const ElementResizer = (function(){
 			delete this.container.ownerDocument.body.dataset.erDir;
 			if(this.debug) console.log(event.type,state);
 		}
-		ontouchstart(event){
-			if(!event.target.classList.contains('er-bar')){return;}
+		ontouchstart(event,state){
+			if(!state.down && !event.target.classList.contains('er-bar')){
+				if(this.debug) console.log(event.type,'continue',event.target);
+				return;
+			}
 			event.stopPropagation();
+			// event.stopImmediatePropagation();
 			if (event.cancelable) event.preventDefault();
-			event.stopImmediatePropagation();
+			if(this.debug) console.log(event.type,'stop',event.target);
 			return false;
 		}
 		resizeTo(w,h){
