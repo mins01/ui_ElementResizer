@@ -50,7 +50,11 @@ const ElementResizer = (function(){
 			}
 			this.container = container;
 			this.container.__er = this;
-			this.target = container.querySelector('.er-target');
+			if(container.classList.contains('er-target')){
+				this.target = container;
+			}else{
+				this.target = container.querySelector('.er-target');
+			}
 			if(!this.target){
 				if(this.debug) console.warn(".er-target이 없습니다."); return false;
 			}

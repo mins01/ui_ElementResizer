@@ -94,12 +94,15 @@
 	z-index: 20;
 }
 
+.er-container[data-er-bar='n'] > .er-bar[data-er-bar='n'] ,
+.er-container[data-er-bar='s'] > .er-bar[data-er-bar='s'] ,
+.er-container[data-er-bar='e'] > .er-bar[data-er-bar='e'] ,
 .er-container[data-er-bar='w'] > .er-bar[data-er-bar='w'] ,
-.er-container[data-er-bar='h'] > .er-bar[data-er-bar='h'] ,
-.er-container[data-er-bar='wh'] > .er-bar[data-er-bar='wh'] ,
-.er-container[data-er-bar='wh'] > .er-bar[data-er-bar='hw'] ,
-.er-container[data-er-bar='hw'] > .er-bar[data-er-bar='wh'] ,
-.er-container[data-er-bar='hw'] > .er-bar[data-er-bar='hw'] {
+.er-container[data-er-bar='ne'] > .er-bar[data-er-bar='ne'] ,
+.er-container[data-er-bar='nw'] > .er-bar[data-er-bar='nw'] ,
+.er-container[data-er-bar='se'] > .er-bar[data-er-bar='se'] ,
+.er-container[data-er-bar='sw'] > .er-bar[data-er-bar='sw'] 
+{
 	mix-blend-mode: normal;
 	background-color: #777;
 	z-index: 30;
