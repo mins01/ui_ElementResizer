@@ -49,6 +49,12 @@
 			er.on();
 			er2 = new ElementResizer(document.querySelector('#er-container-2'));
 			er2.debug = true;
+			//-- 메소드 재선언
+			er2._resizeTo = er2.resizeTo;
+			er2.resizeTo = function(w,h){
+				this._resizeTo(w,h);
+				console.log('er2.resizeTo',w,h);
+			}
 			er2.on();
 		})
 	</script>
@@ -66,7 +72,7 @@
 	</div>
 	<hr>
 	<div class="container">
-		<div class="er-container er-target" id="er-container" style=" height:300px; width:200px; background-color: #ccc;">
+		<div class="er-container er-target" id="er-container" style=" height:300px; width:200px; background-color: #ccc; ">
 			<div style="width:100%;height:100%;padding:10px">
 				<button type="button" class="btn btn-info btn-sm m-1" onclick="er.on()">on</button>
 				<button type="button" class="btn btn-info btn-sm m-1" onclick="er.off()">off</button>
@@ -81,7 +87,7 @@
 			<div class="er-bar" data-er-bar="nw"></div>
 		</div>
 		<hr>
-		<div class="er-container" id="er-container-2">
+		<div class="er-container" id="er-container-2" style="display: inline-block; overflow: hidden;min-width: 20px; min-height: 20px; white-space: nowrap;">
 			<div class="er-target" style=" height:300px; width:200px; background-color: #ccc;">
 				222222
 				<button type="button" class="btn btn-info btn-sm m-1" onclick="er2.on()">on</button>

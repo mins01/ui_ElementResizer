@@ -58,6 +58,16 @@
 			box-sizing: content-box;
 			margin:5px;
 		}
+		.max100{
+			max-width:100%;
+			max-height:100%;
+		}
+		.padding-10px{
+			padding:10px
+		}
+		.bg-gray{
+			background-color: #eee;
+		}
 	</style>
 </head>
 <body>
@@ -74,9 +84,9 @@
 	<hr>
 	<div class="container">
 		<div class="box-list">
-			<div class="box">
-				<div class="er-container" style="position: absolute;top:0;left:0;" >
-					<div class="er-target" style=" height:150px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+			<div class="box ">
+				<div class="max100 padding-10px bg-gray er-container er-target" style="position: absolute;top:0;left:0;" >
+					<div >
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
 					</div>
@@ -90,9 +100,9 @@
 					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
 				</div>
 			</div>
-			<div class="box">
-				<div class="er-container" style="position: absolute;top:0;right:0;" >
-					<div class="er-target" style=" height:150px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+			<div class="box ">
+				<div class="max100 padding-10px bg-gray er-container er-target" style="position: absolute;top:0;right:0;" >
+					<div >
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
 					</div>
@@ -106,9 +116,9 @@
 					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
 				</div>
 			</div>
-			<div class="box">
-				<div class="er-container" style="position: absolute;bottom:0;left:0;" >
-					<div class="er-target" style=" height:150px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+			<div class="box ">
+				<div class="max100 padding-10px bg-gray er-container er-target" style="position: absolute;bottom:0;left:0;" >
+					<div >
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
 					</div>
@@ -122,9 +132,9 @@
 					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
 				</div>
 			</div>
-			<div class="box">
-				<div class="er-container" style="position: absolute;bottom:0;right:0;" >
-					<div class="er-target" style=" height:150px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+			<div class="box ">
+				<div class="max100 padding-10px bg-gray er-container er-target" style="position: absolute;bottom:0;right:0;" >
+					<div >
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
 					</div>
@@ -138,9 +148,9 @@
 					<div class="er-bar" data-er-bar="nw"></div>
 				</div>
 			</div>
-			<div class="box">
-				<div class="er-container" style="position: absolute;top:0;left:0;right:0" >
-					<div class="er-target" style=" height:150px; width:300px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+			<div class="box ">
+				<div class="max100 padding-10px bg-gray er-container er-target" style="position: absolute;top:0;left:0;right:0" >
+					<div >
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
 					</div>
@@ -154,9 +164,9 @@
 					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
 				</div>
 			</div>
-			<div class="box">
-				<div class="er-container" style="position: absolute;bottom:0;left:0;right:0" >
-					<div class="er-target" style=" height:150px; width:300px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+			<div class="box ">
+				<div class="max100 padding-10px bg-gray er-container er-target" style="position: absolute;bottom:0;left:0;right:0" >
+					<div >
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
 					</div>
@@ -170,9 +180,9 @@
 					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
 				</div>
 			</div>
-			<div class="box">
-				<div class="er-container" style="position: absolute;top:0;bottom:0;left:0;" >
-					<div class="er-target" style=" height:300px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+			<div class="box ">
+				<div class="max100 padding-10px bg-gray er-container er-target" style="position: absolute;top:0;bottom:0;left:0;" >
+					<div >
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
 					</div>
@@ -186,9 +196,9 @@
 					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
 				</div>
 			</div>
-			<div class="box">
-				<div class="er-container" style="position: absolute;top:0;bottom:0;right:0;" >
-					<div class="er-target" style=" height:300px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+			<div class="box ">
+				<div class="max100 padding-10px bg-gray er-container er-target" style="position: absolute;top:0;bottom:0;right:0;" >
+					<div >
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
 						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
 					</div>

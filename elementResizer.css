@@ -2,7 +2,8 @@
 
 .er-container{
 	padding:0px;
-	display: inline-block;
+	/* display: inline-block; */
+	box-sizing: border-box;
 }
 .er-container[data-er-on='on']{
 	position: relative;
