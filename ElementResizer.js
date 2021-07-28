@@ -24,7 +24,7 @@ const ElementResizer = (function(){
 				rect_org:{width:-1,height:-1},
 				xy_org:{x:-1,y:-1},
 				down:false,
-				dir:'', //v,h,b
+				erBar:'', //v,h,b
 				target:null
 			}
 			this.cb_ontouchstart = function(event){
@@ -91,9 +91,9 @@ const ElementResizer = (function(){
 			state.xy_org.x = event.x;
 			state.xy_org.y = event.y;
 			
-			state.dir = event.target.dataset.erDir;
-			this.container.dataset.erDir=state.dir;
-			this.container.ownerDocument.body.dataset.erDir=state.dir;
+			state.erBar = event.target.dataset.erBar;
+			this.container.dataset.erBar=state.erBar;
+			this.container.ownerDocument.body.dataset.erBar=state.erBar;
 			
 			if(this.debug) console.log(event.type,state);
 		}
@@ -103,27 +103,27 @@ const ElementResizer = (function(){
 			if (event.cancelable) event.preventDefault();
 			let x = event.x;
 			let y = event.y;
-
-			
-			switch(state.dir){
-				case 'w':
-				this.resizeTo(state.rect_org.width+x-state.xy_org.x ,null);
-				break;
-				case 'h':
-				this.resizeTo(null ,state.rect_org.height+y-state.xy_org.y);
-				break;
-				case 'b':
-				this.resizeTo(state.rect_org.width+x-state.xy_org.x ,state.rect_org.height+y-state.xy_org.y);
-				break;
+			let w = null;
+			let h = null;
+			if(state.erBar.indexOf('e')>-1){
+				w = state.rect_org.width+x-state.xy_org.x
+			}else if(state.erBar.indexOf('w')>-1){
+				w = state.rect_org.width-x+state.xy_org.x
 			}
+			if(state.erBar.indexOf('s')>-1){
+				h = state.rect_org.height+y-state.xy_org.y
+			}else if(state.erBar.indexOf('n')>-1){
+				h = state.rect_org.height-y+state.xy_org.y
+			}
+			this.resizeTo(w,h);
 			if(this.debug) console.log(event.type);
 		}
 		onpointerup(event,state){
 			if(!state.down){return;}
 			state.down = false;
-			state.dir = '';
-			delete this.container.dataset.erDir;
-			delete this.container.ownerDocument.body.dataset.erDir;
+			state.erBar = '';
+			delete this.container.dataset.erBar;
+			delete this.container.ownerDocument.body.dataset.erBar;
 			if(this.debug) console.log(event.type,state);
 		}
 		ontouchstart(event,state){

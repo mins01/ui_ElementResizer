@@ -67,13 +67,18 @@
 	<hr>
 	<div class="container">
 		<div class="er-container" id="er-container">
-			<div class="er-target" style=" height:300px; width:200px; background-color: #ccc;">
+			<div class="er-target" style=" height:300px; width:200px; background-color: #ccc; padding: 10px;">
 				<button type="button" class="btn btn-info btn-sm m-1" onclick="er.on()">on</button>
 				<button type="button" class="btn btn-info btn-sm m-1" onclick="er.off()">off</button>
 			</div>
-			<div class="er-bar " data-er-dir="w"></div>
-			<div class="er-bar " data-er-dir="h"></div>
-			<div class="er-bar " data-er-dir="b"></div>
+			<div class="er-bar" data-er-bar="e"></div>
+			<div class="er-bar" data-er-bar="w"></div>
+			<div class="er-bar" data-er-bar="n"></div>
+			<div class="er-bar" data-er-bar="s"></div>
+			<div class="er-bar" data-er-bar="se"></div>
+			<div class="er-bar" data-er-bar="sw"></div>
+			<div class="er-bar" data-er-bar="ne"></div>
+			<div class="er-bar" data-er-bar="nw"></div>
 		</div>
 		<hr>
 		<div class="er-container" id="er-container-2">
@@ -82,9 +87,9 @@
 				<button type="button" class="btn btn-info btn-sm m-1" onclick="er2.on()">on</button>
 				<button type="button" class="btn btn-info btn-sm m-1" onclick="er2.off()">off</button>
 			</div>
-			<!-- <div class="er-bar " data-er-dir="w"></div> -->
-			<!-- <div class="er-bar " data-er-dir="h"></div> -->
-			<div class="er-bar " data-er-dir="b"></div>
+			<div class="er-bar" data-er-bar="s"></div>
+			<div class="er-bar" data-er-bar="e"></div>
+			<div class="er-bar" data-er-bar="se"></div>
 		</div>
 	</div>
 </body>

@@ -45,6 +45,20 @@
 			ers = ElementResizer.autoApplyAll();
 		})
 	</script>
+	<style>
+		.box-list{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.box{
+			border: 2px dashed #ccc;
+			position: relative;
+			width:300px;
+			height:300px;
+			box-sizing: content-box;
+			margin:5px;
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
@@ -59,69 +73,136 @@
 	</div>
 	<hr>
 	<div class="container">
-		<div class="er-container">
-			<div class="er-target" style=" height:300px; width:150px; background-color: #abc;">
-				all
-				<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
-				<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
+		<div class="box-list">
+			<div class="box">
+				<div class="er-container" style="position: absolute;top:0;left:0;" >
+					<div class="er-target" style=" height:150px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
+					</div>
+					<div class="er-bar" data-er-bar="e"></div>
+					<!-- <div class="er-bar" data-er-bar="w"></div> -->
+					<!-- <div class="er-bar" data-er-bar="n"></div> -->
+					<div class="er-bar" data-er-bar="s"></div>
+					<div class="er-bar" data-er-bar="se"></div>
+					<!-- <div class="er-bar" data-er-bar="sw"></div> -->
+					<!-- <div class="er-bar" data-er-bar="ne"></div> -->
+					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
+				</div>
 			</div>
-			<div class="er-bar " data-er-dir="w"></div>
-			<div class="er-bar " data-er-dir="h"></div>
-			<div class="er-bar " data-er-dir="b"></div>
-		</div>
-		<hr>
-		<div class="er-container">
-			<div class="er-target" style=" height:300px; width:150px; background-color: #ccc;  border: 3px dotted #f00;">
-				both
+			<div class="box">
+				<div class="er-container" style="position: absolute;top:0;right:0;" >
+					<div class="er-target" style=" height:150px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
+					</div>
+					<!-- <div class="er-bar" data-er-bar="e"></div> -->
+					<div class="er-bar" data-er-bar="w"></div>
+					<!-- <div class="er-bar" data-er-bar="n"></div> -->
+					<div class="er-bar" data-er-bar="s"></div>
+					<!-- <div class="er-bar" data-er-bar="se"></div> -->
+					<div class="er-bar" data-er-bar="sw"></div>
+					<!-- <div class="er-bar" data-er-bar="ne"></div> -->
+					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
+				</div>
 			</div>
-			<!-- <div class="er-bar " data-er-dir="w"></div> -->
-			<!-- <div class="er-bar " data-er-dir="h"></div> -->
-			<div class="er-bar " data-er-dir="b"></div>
-		</div>
-		<div class="er-container">
-			<div class="er-target" style=" height:300px; width:150px; background-color: #fff;  border: 1px solid #000;">
-				vertical
+			<div class="box">
+				<div class="er-container" style="position: absolute;bottom:0;left:0;" >
+					<div class="er-target" style=" height:150px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
+					</div>
+					<div class="er-bar" data-er-bar="e"></div>
+					<!-- <div class="er-bar" data-er-bar="w"></div> -->
+					<div class="er-bar" data-er-bar="n"></div>
+					<!-- <div class="er-bar" data-er-bar="s"></div> -->
+					<!-- <div class="er-bar" data-er-bar="se"></div> -->
+					<!-- <div class="er-bar" data-er-bar="sw"></div> -->
+					<div class="er-bar" data-er-bar="ne"></div>
+					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
+				</div>
 			</div>
-			<div class="er-bar " data-er-dir="w"></div>
-			<!-- <div class="er-bar " data-er-dir="h"></div> -->
-			<!-- <div class="er-bar " data-er-dir="b"></div> -->
-		</div>
-		<div class="er-container">
-			<div class="er-target" style=" height:300px; width:150px; background-color: #eee; border: 5px double #999;">
-				horizontal
+			<div class="box">
+				<div class="er-container" style="position: absolute;bottom:0;right:0;" >
+					<div class="er-target" style=" height:150px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
+					</div>
+					<!-- <div class="er-bar" data-er-bar="e"></div> -->
+					<div class="er-bar" data-er-bar="w"></div>
+					<div class="er-bar" data-er-bar="n"></div>
+					<!-- <div class="er-bar" data-er-bar="s"></div> -->
+					<!-- <div class="er-bar" data-er-bar="se"></div> -->
+					<!-- <div class="er-bar" data-er-bar="sw"></div> -->
+					<!-- <div class="er-bar" data-er-bar="ne"></div> -->
+					<div class="er-bar" data-er-bar="nw"></div>
+				</div>
 			</div>
-			<!-- <div class="er-bar " data-er-dir="w"></div> -->
-			<div class="er-bar " data-er-dir="h"></div>
-			<!-- <div class="er-bar " data-er-dir="b"></div> -->
-		</div>
-		<hr>
-		<div class="er-container">
-			<div class="er-target" style=" height:300px; width:150px; min-width:100px;min-height:100px; background-color: #ccc;">
-				min-width:100px;min-height:100px;
+			<div class="box">
+				<div class="er-container" style="position: absolute;top:0;left:0;right:0" >
+					<div class="er-target" style=" height:150px; width:300px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
+					</div>
+					<!-- <div class="er-bar" data-er-bar="e"></div> -->
+					<!-- <div class="er-bar" data-er-bar="w"></div> -->
+					<!-- <div class="er-bar" data-er-bar="n"></div> -->
+					<div class="er-bar" data-er-bar="s"></div>
+					<!-- <div class="er-bar" data-er-bar="se"></div> -->
+					<!-- <div class="er-bar" data-er-bar="sw"></div> -->
+					<!-- <div class="er-bar" data-er-bar="ne"></div> -->
+					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
+				</div>
 			</div>
-			<div class="er-bar " data-er-dir="w"></div>
-			<div class="er-bar " data-er-dir="h"></div>
-			<div class="er-bar " data-er-dir="b"></div>
-		</div>
-		<hr>
-		<div class="er-container">
-			<div class="er-target" style=" height:300px; width:150px; max-width:300px;max-height:300px; background-color: #ccc;">
-				max-width:300px;max-height:300px;
+			<div class="box">
+				<div class="er-container" style="position: absolute;bottom:0;left:0;right:0" >
+					<div class="er-target" style=" height:150px; width:300px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
+					</div>
+					<!-- <div class="er-bar" data-er-bar="e"></div> -->
+					<!-- <div class="er-bar" data-er-bar="w"></div> -->
+					<div class="er-bar" data-er-bar="n"></div>
+					<!-- <div class="er-bar" data-er-bar="s"></div> -->
+					<!-- <div class="er-bar" data-er-bar="se"></div> -->
+					<!-- <div class="er-bar" data-er-bar="sw"></div> -->
+					<!-- <div class="er-bar" data-er-bar="ne"></div> -->
+					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
+				</div>
 			</div>
-			<div class="er-bar " data-er-dir="w"></div>
-			<div class="er-bar " data-er-dir="h"></div>
-			<div class="er-bar " data-er-dir="b"></div>
-		</div>
-		<hr>
-		<div class="er-container">
-			<div class="er-target" style=" min-width:100px;min-height:100px;width:100px;height:100px;">
-				<div style="width: calc(100% - 10px);height: calc(100% - 10px); border: 3px solid #000;"> </div>
+			<div class="box">
+				<div class="er-container" style="position: absolute;top:0;bottom:0;left:0;" >
+					<div class="er-target" style=" height:300px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
+					</div>
+					<div class="er-bar" data-er-bar="e"></div>
+					<!-- <div class="er-bar" data-er-bar="w"></div> -->
+					<!-- <div class="er-bar" data-er-bar="n"></div> -->
+					<!-- <div class="er-bar" data-er-bar="s"></div> -->
+					<!-- <div class="er-bar" data-er-bar="se"></div> -->
+					<!-- <div class="er-bar" data-er-bar="sw"></div> -->
+					<!-- <div class="er-bar" data-er-bar="ne"></div> -->
+					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
+				</div>
 			</div>
-			<div class="er-bar " data-er-dir="w"></div>
-			<div class="er-bar " data-er-dir="h"></div>
-			<div class="er-bar " data-er-dir="b"></div>
+			<div class="box">
+				<div class="er-container" style="position: absolute;top:0;bottom:0;right:0;" >
+					<div class="er-target" style=" height:300px; width:150px; max-width:300px;max-height: 300px; min-width:50px;min-height:50px; background-color: #ccc; padding: 10px;">
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.on()">on</button>
+						<button type="button" class="btn btn-info btn-sm m-1" onclick="this.closest('.er-container').__er.off()">off</button>
+					</div>
+					<!-- <div class="er-bar" data-er-bar="e"></div> -->
+					<div class="er-bar" data-er-bar="w"></div>
+					<!-- <div class="er-bar" data-er-bar="n"></div> -->
+					<!-- <div class="er-bar" data-er-bar="s"></div> -->
+					<!-- <div class="er-bar" data-er-bar="se"></div> -->
+					<!-- <div class="er-bar" data-er-bar="sw"></div> -->
+					<!-- <div class="er-bar" data-er-bar="ne"></div> -->
+					<!-- <div class="er-bar" data-er-bar="nw"></div> -->
+				</div>
+			</div>
 		</div>
-		<hr>
 	</div>
 </body>
 </html>
